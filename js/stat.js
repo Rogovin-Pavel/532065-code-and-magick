@@ -22,7 +22,7 @@ var getMaxElement = function (arr) {
     if (arr[i] > maxElement) {
       maxElement = arr[i];
     }
-  } 
+  }
   return maxElement;
 };
 
