@@ -67,17 +67,17 @@ var getRandomElement = function (array) {
 
 /**
  * Отрисовывает одного случайного волшебника
- * @param {WIZARD_NAMES} WIZARD_NAMES передаем массив с именами волшебников
- * @param {WIZARD_SURNAMES} WIZARD_SURNAMES передаем массив с фамилиями волшебников
- * @param {COAT_COLOR} COAT_COLOR передаем массив с цветами плащей волшебников
- * @param {EYES_COLOR} EYES_COLOR передаем массив с цветами глаз волшебников
+ * @param {Array} WIZARD_NAMES передаем массив с именами волшебников
+ * @param {Array} WIZARD_SURNAMES передаем массив с фамилиями волшебников
+ * @param {Array} COAT_COLOR передаем массив с цветами плащей волшебников
+ * @param {Array} EYES_COLOR передаем массив с цветами глаз волшебников
  * @return {*} возвращаем случайного волшебника
  */
-var renderWizard = function (WIZARD_NAMES, WIZARD_SURNAMES, COAT_COLOR, EYES_COLOR) {
+var renderWizard = function (wizardNames, wizardSurnames, coatColor, eyesColor) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
-  wizardElement.querySelector('.setup-similar-label').textContent = getRandomElement(WIZARD_NAMES) + ' ' + getRandomElement(WIZARD_SURNAMES);
-  wizardElement.querySelector('.wizard-coat').style.fill = getRandomElement(COAT_COLOR);
-  wizardElement.querySelector('.wizard-eyes').style.fill = getRandomElement(EYES_COLOR);
+  wizardElement.querySelector('.setup-similar-label').textContent = getRandomElement(wizardNames) + ' ' + getRandomElement(wizardSurnames);
+  wizardElement.querySelector('.wizard-coat').style.fill = getRandomElement(coatColor);
+  wizardElement.querySelector('.wizard-eyes').style.fill = getRandomElement(eyesColor);
   return wizardElement;
 };
 /**
