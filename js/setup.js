@@ -73,7 +73,7 @@ var getRandomElement = function (array) {
  * @param {EYES_COLOR} EYES_COLOR передаем массив с цветами глаз волшебников
  * @return {*} возвращаем случайного волшебника
  */
-var renderWizard = function (WIZARD_NAMES, surNames, coatColors, eyesColors) {
+var renderWizard = function (WIZARD_NAMES, WIZARD_SURNAMES, COAT_COLOR, EYES_COLOR) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
   wizardElement.querySelector('.setup-similar-label').textContent = getRandomElement(WIZARD_NAMES) + ' ' + getRandomElement(WIZARD_SURNAMES);
   wizardElement.querySelector('.wizard-coat').style.fill = getRandomElement(COAT_COLOR);
