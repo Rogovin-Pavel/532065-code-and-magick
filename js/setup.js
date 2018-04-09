@@ -71,6 +71,7 @@ var getRandomElement = function (array) {
  * @param {Array} WIZARD_SURNAMES передаем массив с фамилиями волшебников
  * @param {Array} COAT_COLOR передаем массив с цветами плащей волшебников
  * @param {Array} EYES_COLOR передаем массив с цветами глаз волшебников
+ * @return {*} возвращаем случайного волшебника
  */
 var renderWizard = function(WIZARD_NAMES, WIZARD_SURNAMES, COAT_COLOR, EYES_COLOR) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
