@@ -65,10 +65,32 @@ var getRandomElement = function (array) {
   return array[randomInteger(MIN_ARRAY_LENGTH, array.length - 1)];
 };
 
-for (var i = 0; i < 4; i++) {
+/**
+ * Отрисовывает одного случайного волшебника
+ * @param {Array} WIZARD_NAMES передаем массив с именами волшебников
+ * @param {Array} WIZARD_SURNAMES передаем массив с фамилиями волшебников
+ * @param {Array} COAT_COLOR передаем массив с цветами плащей волшебников
+ * @param {Array} EYES_COLOR передаем массив с цветами глаз волшебников
+ */
+var renderWizard = function(WIZARD_NAMES, WIZARD_SURNAMES, COAT_COLOR, EYES_COLOR) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
   wizardElement.querySelector('.setup-similar-label').textContent = getRandomElement(WIZARD_NAMES) + ' ' + getRandomElement(WIZARD_SURNAMES);
   wizardElement.querySelector('.wizard-coat').style.fill = getRandomElement(COAT_COLOR);
   wizardElement.querySelector('.wizard-eyes').style.fill = getRandomElement(EYES_COLOR);
-  similarListElement.appendChild(wizardElement);
+  return wizardElement;
 }
+/**
+ * Создаем фрагмент, для оптимизации
+ */
+var fragment = document.createDocumentFragment();
+
+/**
+ * Добавляем в фрагмент четырех, случайно сгенерированных, волшебников
+ */
+for (var i = 0; i < 4; i++) {
+  fragment.appendChild(renderWizard(WIZARD_NAMES, WIZARD_SURNAMES, COAT_COLOR, EYES_COLOR));
+};
+/**
+ * Добавляем фрагмент в DOM
+ */
+similarListElement.appendChild(fragment);
